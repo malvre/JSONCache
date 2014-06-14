@@ -21,3 +21,7 @@ Usage
             [self.tableView reloadData];
 		});
 	});
+
+How to install?
+---------------
+Add the JSONCache.h and JSONCache.m files in your project.
