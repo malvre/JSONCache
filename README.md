@@ -10,7 +10,7 @@ This component implements a cache in requests that retrieve JSON structures. It 
 Usage
 -----
 
-  JSONCache *cache = [[JSONCache alloc] initWithUrl:@"http://datapoa.com.br/api/3/action/package_list"];
+  	JSONCache *cache = [[JSONCache alloc] initWithUrl:@"http://datapoa.com.br/api/3/action/package_list"];
 	cache.timeout = 1; // 1 minute
 	
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
