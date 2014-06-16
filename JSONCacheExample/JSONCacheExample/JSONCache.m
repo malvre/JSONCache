@@ -1,9 +1,7 @@
 //
-//  JSONCache.m
-//  DestinoRS
 //
 //  Created by Marcelo Alves Rezende on 13/06/14.
-//  Copyright (c) 2014 PROCERGS. All rights reserved.
+//  Copyright (c) 2014 Marcelo Rezende. All rights reserved.
 //
 //
 //
@@ -12,7 +10,8 @@
 //
 //  JSONCache *cacheNews = [JSONCache alloc] initWithURL: @"http://domain.com/api/news"];
 //  cacheNews.timeout = 60;
-//  NSDictionary *obj = [cacheNews execute];
+//  [cacheNews execute];
+//  NSDictionary *news = [cacheNews json];
 //
 //
 
@@ -30,17 +29,13 @@
 
 - (void) execute {
 	if (![self fileExists]) {
-		NSLog(@"Execute - arquivo não existe");
 		[self download];
 		self.readFromServer = YES;
 	} else {
-		NSLog(@"Execute - arquivo existe");
 		if ([self isExpired]) {
-			NSLog(@"Execute - e está expirado");
 			[self download];
 			self.readFromServer = YES;
 		} else {
-			NSLog(@"Execute - e é válido");
 			self.readFromServer = NO;
 		}
 	}
@@ -106,22 +101,17 @@
 - (void) download
 {
 	
-	NSLog(@"Iniciando download da URL %@", self.url);
-	
 	NSURL  *url = [NSURL URLWithString:self.url];
 	NSData *urlData = [NSData dataWithContentsOfURL:url];
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,[self filenameFromUrl]];
 	[urlData writeToFile:filePath atomically:YES];
-	NSLog(@"Gravando com o nome %@", filePath);
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *now = [NSString stringWithFormat:@"%f", [NSDate timeIntervalSinceReferenceDate]+(self.timeout*60)];
 	[defaults setValue:now forKey:[NSString stringWithFormat:@"%@_expires", [self filenameFromUrl]]];
 	[defaults synchronize];
-	NSLog(@"Finalizou download e guardou data de expiração: %@", now);
-
 	
 }
 
@@ -132,8 +122,6 @@
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSTimeInterval expires = [[defaults valueForKey:[NSString stringWithFormat:@"%@_expires", [self filenameFromUrl]]] doubleValue];
-	
-	NSLog(@"Now: %f, Before: %f, Diff: %f", now, expires, now-expires);
 	
 	return now > expires;
 }

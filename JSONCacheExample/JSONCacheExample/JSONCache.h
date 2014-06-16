@@ -1,9 +1,6 @@
 //
-//  JSONCache.h
-//  DestinoRS
-//
 //  Created by Marcelo Alves Rezende on 13/06/14.
-//  Copyright (c) 2014 PROCERGS. All rights reserved.
+//  Copyright (c) 2014 Marcelo Rezende. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
