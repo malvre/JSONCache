@@ -59,16 +59,21 @@
 
 - (id) json
 {
+	id result = @{};
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
 	NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, [self filenameFromUrl]];
 	
 	NSData* data = [NSData dataWithContentsOfFile:filePath];
-    __autoreleasing NSError* error = nil;
-    id result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    if (error != nil) return nil;
-    return result;
+	if (data) {
+    	__autoreleasing NSError* error = nil;
+    	result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+		if (error != nil) {
+			return @{};
+		}
+	}
+	return result;
 }
 
 
