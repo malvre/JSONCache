@@ -15,10 +15,10 @@ Usage
 	
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		[cache execute];
+		NSDictionary *json = [cache json];
 		dispatch_async(dispatch_get_main_queue(), ^{
-			NSDictionary *json = [cache json];
 			list = [json objectForKey:@"result"];
-            [self.tableView reloadData];
+			[self.tableView reloadData];
 		});
 	});
 
