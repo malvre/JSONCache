@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7FEEBC86-B8A7-48ED-BACA-FD1000581C2C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JSONCacheExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>ED698542-772B-4727-BFC0-247C755D8413</key>
+		<string>https://github.com/malvre/JSONCache.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JSONCacheExample/JSONCacheExample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>ED698542-772B-4727-BFC0-247C755D8413</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/malvre/JSONCache.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ED698542-772B-4727-BFC0-247C755D8413</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ED698542-772B-4727-BFC0-247C755D8413</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JSONCache</string>
+		</dict>
+	</array>
+</dict>
+</plist>

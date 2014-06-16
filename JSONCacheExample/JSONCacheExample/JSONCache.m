@@ -49,8 +49,12 @@
 
 
 - (void) refresh {
-	[self download];
-	self.readFromServer = YES;
+	if (!self.readFromServer) {
+		[self download];
+		self.readFromServer = YES;
+	} else {
+		self.readFromServer = NO;
+	}
 }
 
 - (id) json
